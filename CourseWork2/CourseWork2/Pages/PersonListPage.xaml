@@ -1,0 +1,37 @@
+﻿<Page x:Class="CourseWork2.PersonListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CourseWork2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="PersonListPage">
+
+    <Grid>
+        <DataGrid x:Name="personList" AutoGenerateColumns="False" FontSize="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Width="0.9*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Surname" Binding="{Binding Surname, Mode=OneWay}" Width="1*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age, Mode=OneWay}" Width="0.4*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Kids Amount" Binding="{Binding KidsAmount, Mode=OneWay}" Width="1*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Is Employee" Binding="{Binding IsEmployee, Mode=OneWay}" Width="0.8*"/>
+                <DataGridTemplateColumn Header="Add to employee" Width="1*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="addButton" Content="Add Employee" Click="AddEmployee_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="1*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="deleteButton" Content="Delete" Click="DeletePerson_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Page>

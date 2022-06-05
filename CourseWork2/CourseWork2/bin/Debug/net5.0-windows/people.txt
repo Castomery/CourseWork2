@@ -1,0 +1,1 @@
+{"personDTOs":[{"Id":"97bd4292-29ce-43cf-82c5-99ca22fcc786","name":"Максим","surname":"Голобородько","age":45,"kidsAmount":0,"IsEmployee":true},{"Id":"6c3a9378-a30f-4504-bfba-c27225007597","name":"Іван","surname":"Крутяк","age":64,"kidsAmount":3,"IsEmployee":true}]}

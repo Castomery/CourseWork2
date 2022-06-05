@@ -1,0 +1,58 @@
+﻿<Page x:Class="CourseWork2.EmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CourseWork2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="EmployeePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Label Content="Filter" Height="50" Width="80" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="30"/>
+            <ComboBox x:Name="EmployeeType" Height="40" Width="200" HorizontalAlignment="Left" Margin="110,0,0,0" FontSize="20" SelectionChanged="EmployeeType_SelectionChanged">
+                <ComboBoxItem Content="None"></ComboBoxItem>
+                <ComboBoxItem Content="Pensioner"></ComboBoxItem>
+                <ComboBoxItem Content="Pre-Pensioner"></ComboBoxItem>
+                <ComboBoxItem Content="Childless"></ComboBoxItem>
+                <ComboBoxItem Content="Many kids"></ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <DataGrid x:Name="EmployeeList" AutoGenerateColumns="False" FontSize="20" HorizontalContentAlignment="Stretch">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Person Info" Binding="{Binding PersonInfo, Mode=OneWay}" Width="1*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Salary" Binding="{Binding Salary, Mode=OneWay}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="Employee Position" Binding="{Binding EmployeePosition, Mode=OneWay}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Employee Type" Binding="{Binding EmployeeType, Mode=OneWay}" ></DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit position" Click="ChangePosition_Click" FontSize="18"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Get Bonus" Click="GetBonus_Click" FontSize="18"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn> 
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="Delete_Click" FontSize="18"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>
